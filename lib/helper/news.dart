@@ -1,7 +1,4 @@
 import 'dart:convert';
-
-
-
 import 'package:NewsLe/models/aritcle_model.dart';
 import 'package:http/http.dart' as http;
 
