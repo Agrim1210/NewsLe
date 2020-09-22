@@ -1,9 +1,9 @@
 import 'package:NewsLe/helper/news.dart';
 import 'package:NewsLe/models/aritcle_model.dart';
-import 'package:NewsLe/views/article_view.dart';
+
 import 'package:NewsLe/views/blogs_tile.dart';
 import 'package:flutter/material.dart';
-import 'package:NewsLe/views/home.dart';
+
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class Category extends StatefulWidget {
@@ -34,7 +34,7 @@ class _CategoryState extends State<Category> {
 
   @override
   Widget build(BuildContext context) {
-    return  _loading
+    return _loading
         ? Center(
             child: Container(
               color: Colors.blue[900],
@@ -45,13 +45,13 @@ class _CategoryState extends State<Category> {
               ),
             ),
           )
-        :Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.grey[200],
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-           Text(
+        : Scaffold(
+            appBar: AppBar(
+              backgroundColor: Colors.grey[200],
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
                     "News",
                     style: TextStyle(
                         fontFamily: 'Montserrat',
@@ -66,18 +66,18 @@ class _CategoryState extends State<Category> {
                       fontSize: 30,
                     ),
                   )
-          ],
-        ),
-        actions: <Widget>[
-          Opacity(opacity: 0),
-          Container(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: Icon(Icons.save))
-        ],
-        elevation: 0.0,
-        centerTitle: true,
-      ),
-      body: SingleChildScrollView(
+                ],
+              ),
+              actions: <Widget>[
+                Opacity(opacity: 0),
+                Container(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: Icon(Icons.save))
+              ],
+              elevation: 0.0,
+              centerTitle: true,
+            ),
+            body: SingleChildScrollView(
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 16),
                 child: Column(
@@ -102,7 +102,6 @@ class _CategoryState extends State<Category> {
                 ),
               ),
             ),
-    );
+          );
   }
 }
-
