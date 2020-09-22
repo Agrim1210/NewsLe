@@ -20,8 +20,10 @@ class CategoryTile extends StatelessWidget {
         );
       },
       child: Container(
+        
         margin: EdgeInsets.only(right: 16),
         child: Stack(
+          
           children: <Widget>[
             ClipRRect(
               borderRadius: BorderRadius.circular(6),

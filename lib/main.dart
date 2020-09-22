@@ -12,8 +12,10 @@ class MyApp extends StatelessWidget {
       title: 'NewsLe',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+    
         primaryColor: Colors.white,
       ),
+     
       home: Home(),
     );
   }

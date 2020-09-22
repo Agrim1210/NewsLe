@@ -45,7 +45,7 @@ class BlogTile extends StatelessWidget {
               height: 10,
             ),
             Text(
-              description,
+              description != null ? description:'',
               style: TextStyle(color: Colors.grey),
             ),
             SizedBox(

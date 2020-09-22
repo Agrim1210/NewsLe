@@ -1,8 +1,10 @@
 import 'package:NewsLe/helper/news.dart';
 import 'package:NewsLe/models/aritcle_model.dart';
 import 'package:NewsLe/views/article_view.dart';
+import 'package:NewsLe/views/blogs_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:NewsLe/views/home.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class Category extends StatefulWidget {
   final String category;
@@ -13,7 +15,7 @@ class Category extends StatefulWidget {
 
 class _CategoryState extends State<Category> {
   List<ArticleModel> articles = List<ArticleModel>();
-  bool _loading = false;
+  bool _loading = true;
 
   @override
   void initState() {
@@ -32,21 +34,38 @@ class _CategoryState extends State<Category> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  _loading
+        ? Center(
+            child: Container(
+              color: Colors.blue[900],
+              child: SpinKitFadingCube(
+                duration: Duration(milliseconds: 3000),
+                color: Colors.white,
+                size: 50,
+              ),
+            ),
+          )
+        :Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.grey[200],
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              "News",
-            ),
-            Text(
-              "Le",
-              style: TextStyle(
-                color: Colors.blue,
-              ),
-            )
+           Text(
+                    "News",
+                    style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontSize: 30,
+                        fontStyle: FontStyle.italic),
+                  ),
+                  Text(
+                    "Le",
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontFamily: 'Montserrat',
+                      fontSize: 30,
+                    ),
+                  )
           ],
         ),
         actions: <Widget>[
@@ -58,13 +77,9 @@ class _CategoryState extends State<Category> {
         elevation: 0.0,
         centerTitle: true,
       ),
-      body: _loading
-          ? Center(
+      body: SingleChildScrollView(
               child: Container(
-              child: CircularProgressIndicator(),
-            ))
-          : SingleChildScrollView(
-              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 16),
                 child: Column(
                   children: <Widget>[
                     Container(
@@ -91,59 +106,3 @@ class _CategoryState extends State<Category> {
   }
 }
 
-class BlogTile extends StatelessWidget {
-  final String imageUrl;
-  final String title;
-  final String description;
-  final String url;
-
-  BlogTile(
-      {@required this.imageUrl,
-      @required this.title,
-      @required this.description,
-      @required this.url});
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => Article(
-                      blogUrl: url,
-                    )));
-      },
-      child: Container(
-        child: Column(
-          children: <Widget>[
-            ClipRRect(
-              borderRadius: BorderRadius.circular(6),
-              child: Image.network(imageUrl),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Text(
-              title,
-              style: TextStyle(
-                color: Colors.black87,
-                fontSize: 17,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Text(
-              description,
-              style: TextStyle(color: Colors.grey),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
