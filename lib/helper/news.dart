@@ -6,8 +6,7 @@ class News {
   List<ArticleModel> news = [];
   Future<void> getNews() async {
     String url =
-     'http://newsapi.org/v2/top-headlines?country=in&apiKey=0c334555e9a24ec8a1e40ad1dd30763b';
-     
+        'http://newsapi.org/v2/top-headlines?country=in&apiKey=0c334555e9a24ec8a1e40ad1dd30763b';
 
     var response = await http.get(url);
     var jsonData = jsonDecode(response.body);
@@ -20,22 +19,20 @@ class News {
             description: element['description'],
             url: element['url'],
             urlToImage: element['urlToImage'],
-            // publishedAt: element['publishedAt'],
             content: element['content'],
           );
           news.add(articleModel);
-      
         }
       });
     }
   }
 }
-class CategoryNews{
-   List<ArticleModel> news = [];
+
+class CategoryNews {
+  List<ArticleModel> news = [];
   Future<void> getCategoryNews(String category) async {
     String url =
-     'http://newsapi.org/v2/top-headlines?country=in&category=$category&apiKey=0c334555e9a24ec8a1e40ad1dd30763b';
-     
+        'http://newsapi.org/v2/top-headlines?country=in&category=$category&apiKey=0c334555e9a24ec8a1e40ad1dd30763b';
 
     var response = await http.get(url);
     var jsonData = jsonDecode(response.body);
@@ -52,7 +49,6 @@ class CategoryNews{
             content: element['content'],
           );
           news.add(articleModel);
-      
         }
       });
     }

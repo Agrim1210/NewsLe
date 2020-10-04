@@ -1,16 +1,16 @@
-import 'package:NewsLe/constants.dart';
+
 import 'package:NewsLe/models/aritcle_model.dart';
 import 'package:NewsLe/views/blogs_tile.dart';
-import 'loading_screen.dart';
-import 'package:NewsLe/views/category_new.dart';
 import 'package:NewsLe/views/category_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:NewsLe/models/category_model.dart';
 import 'package:NewsLe/helper/data.dart';
 import 'package:NewsLe/helper/news.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatefulWidget {
+ 
   @override
   _HomeState createState() => _HomeState();
 }
@@ -43,39 +43,30 @@ class _HomeState extends State<Home> {
     return _loading
         ? Center(
             child: Container(
-              color: Colors.blue[900],
+              color: Colors.black87,
               child: SpinKitFadingCube(
                 duration: Duration(milliseconds: 3000),
-                color: Colors.white,
+                color: Colors.redAccent,
                 size: 50,
               ),
             ),
           )
         : Scaffold(
             appBar: AppBar(
-              backgroundColor: Colors.grey[200],
+              backgroundColor: Colors.black,
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    "News",
-                    style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 30,
-                        fontStyle: FontStyle.italic),
+                    "NewsLe",
+                    style: GoogleFonts.bangers(fontSize: 50,color: Colors.red),
                   ),
-                  Text(
-                    "Le",
-                    style: TextStyle(
-                      color: Colors.blue,
-                      fontFamily: 'Montserrat',
-                      fontSize: 30,
-                    ),
-                  )
                 ],
               ),
               elevation: 0.0,
             ),
+            
+         
             body: SingleChildScrollView(
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 16),

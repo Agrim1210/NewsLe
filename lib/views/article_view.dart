@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class Article extends StatefulWidget {
@@ -17,19 +18,16 @@ class _ArticleState extends State<Article> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.grey[200],
+              backgroundColor: Colors.black,
+         
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
-                "News",
-              ),
-              Text(
-                "Le",
-                style: TextStyle(
-                  color: Colors.blue,
-                ),
-              )
+             Text(
+                    "NewsLe",
+                                       style: GoogleFonts.bangers(fontSize: 50,color: Colors.red),
+
+                  ),
             ],
           ),
           actions: <Widget>[
