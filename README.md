@@ -1,6 +1,9 @@
 # NewsLe
 
-A new Flutter project.
+A news app made with flutter using newsapi. Various articles can be opened in web view in the app itself.
+![WhatsApp Image 2021-03-04 at 2 05 10 PM (2)](https://user-images.githubusercontent.com/62332164/109935256-6ba7fa80-7cf3-11eb-99f9-aaee4f7479fe.jpeg)
+![WhatsApp Image 2021-03-04 at 2 05 10 PM (3)](https://user-images.githubusercontent.com/62332164/109935238-6480ec80-7cf3-11eb-8ee8-477c065f1b8e.jpeg)
+
 
 ## Getting Started
 
